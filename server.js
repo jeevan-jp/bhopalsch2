@@ -1,7 +1,7 @@
 var express = require('express');
 const nodemailer = require('nodemailer');
 //const xoauth2 = require('xoauth2');
-const smtpT = require('nodemailer-smtp-transport');
+// const smtpT = require('nodemailer-smtp-transport');
 var app = express();
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
@@ -14,8 +14,8 @@ var transporter = nodemailer.createTransport({
   
    auth: {
        
-           user: "mjjpjgms@gmail.com",
-           pass: "bhopalsch123"
+           user: "something@xyz.com", // mjjpjgms@gmail.com
+           pass: "********" // bhopalsch123
        
    }
 });
@@ -138,6 +138,7 @@ var auth = express.Router();
 var auth2 = express.Router();
 api.get('/complaints',(req,res) => {
     //res.send('hello');
+    console.log('hi');
     res.json(complaints);
 })
 
